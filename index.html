@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eclipse</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        height: 100vh;
+        background-color: #ffe4d6;
+        display: grid;
+        place-items: center;
+      }
+      .container {
+        background-color: #ffbb5c;
+        width: 40vw;
+        height: 80vh;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        animation: sky-change 10s linear infinite;
+      }
+      .circle {
+        background-color: #e25e3e;
+        width: 17rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .circle::before {
+        content: "";
+        background-color: black;
+        width: 16.5rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        position: absolute;
+        animation: ecllipse 10s ease-in-out infinite;
+        position: absolute;
+      }
+      @keyframes ecllipse {
+        0% {
+          translate: 100%;
+        }
+        50% {
+          translate: 0%;
+        }
+        100% {
+          translate: -100%;
+        }
+      }
+      @keyframes sky-change {
+        0% {
+          background-color: #ffbb5cb5;
+        }
+        25% {
+          background-color: #fcbf49;
+        }
+        50% {
+          background-color: #000000;
+        }
+        75% {
+          background-color: #fcbf49;
+        }
+        100% {
+          background-color: #ffbb5cb5;
+        }
+      }
+      @media (width<=998px) {
+        .container {
+          width: 90vw;
+        }
+        .circle,
+        .circle::before {
+          width: 95%;
+          aspect-ratio: 1;
+        }
+      }
+      .container {
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="circle"></div>
+    </div>
+  </body>
+</html>
